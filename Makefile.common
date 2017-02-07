@@ -20,6 +20,7 @@ CFLAGS += -Wall -Wshadow -Wmissing-prototypes -Wmissing-declarations \
 
 # ----- Verbosity control -----------------------------------------------------
 
+CC = clang-3.8
 CPP := $(CPP)   # make sure changing CC won't affect CPP
 
 CC_normal	:= $(CC)
