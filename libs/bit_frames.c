@@ -2424,7 +2424,7 @@ enum bram_cfg_names { BRAM_ENABLED_TOP, BRAM_ENABLED_BOTTOM,
 		BRAM_DATA_WIDTH_B_9, BRAM_DATA_WIDTH_B_18,
 		BRAM_DATA_WIDTH_B_36,
         BRAM_RAM_MODE_TDP, BRAM_RAM_MODE_SDP };
-
+#if 0
 static const cfg_bits_t bram_bits[] =
 {
 	// minor  v16  bits            name
@@ -2517,6 +2517,7 @@ static const cfg_bits_t bram_bits[] =
 
 	{ -1 }
 };
+#endif
 
 // Use struct to avoid warnings/casts compared to pointer to array of int.
 struct eight_words
@@ -2524,6 +2525,7 @@ struct eight_words
 	int w[8];
 };
 
+#if 0
 static void extract_init_srval_18(struct eight_words* eight_words, int *init_a,
 	int *init_b, int *srval_a, int *srval_b);
 static void extract_init_srval_36(struct eight_words* eight_top_words,
@@ -2601,6 +2603,7 @@ static void extract_init_srval_36(struct eight_words* eight_top_words,
 	*srval_b = ((int64_t) srval_b_top & 0xFFFF) | (((int64_t) srval_b_bot & 0xFFFF) << 16)
 		  | (((int64_t) srval_b_top & 0x3000) << 32) | (( (int64_t) srval_b_bot & 0x3000) << 34);
 }
+#endif
 
 static int extract_bram(struct extract_state *es)
 {
